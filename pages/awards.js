@@ -6,9 +6,9 @@ import Section from '../components/section'
 import { FundSection } from '../components/funding'
 import { AwardSection } from '../components/award'
 
-const Publications = () => (
-  <Layout title="Publications">
-    <Container mt={8}>
+const Awards = () => (
+  <Layout title="Awards">
+    <Container maxW="1200px" mt={8}>
       <Section delay={0.1} mb={12}>
         <Heading as="h3" fontSize={20} mb={4}>
           Awards & Scholarships
@@ -104,11 +104,11 @@ const Publications = () => (
         </Heading>
         <FundSection year="Jul 2024 - Jun 2025">
           <Text fontSize={'md'} fontWeight='bold'>
-            로봇 환경을 위한 단일 및 소수의 이미지 기반 다수 물체의 고속 3차원 복원
+            Fast 3D Shape Reconstruction of Multiple Objects from Single/Few Images for Robotic Environments
           </Text>
           <Text fontSize={'sm'}>
-            <em>석사과정생연구장려금지원사업</em> <br />
-            Ministry of Education, Republic of Korea.
+            <em>Master's Student Research Fellowship Program</em> <br />
+            Ministry of Education, Republic of Korea
           </Text>
         </FundSection>
       </Section>
@@ -116,5 +116,5 @@ const Publications = () => (
   </Layout>
 )
 
-export default Publications
+export default Awards
 export { getServerSideProps } from '../components/chakra'
