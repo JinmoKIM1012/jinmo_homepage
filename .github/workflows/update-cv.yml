@@ -16,7 +16,7 @@ jobs:
 
       - name: Clone Overleaf repo
         run: |
-          git clone https://${{ secrets.OVERLEAF_GIT_TOKEN }}@git.overleaf.com/${{ secrets.OVERLEAF_PROJECT_ID }} overleaf-cv
+          git clone https://git:${{ secrets.OVERLEAF_GIT_TOKEN }}@git.overleaf.com/${{ secrets.OVERLEAF_PROJECT_ID }} overleaf-cv
         env:
           OVERLEAF_GIT_TOKEN: ${{ secrets.OVERLEAF_GIT_TOKEN }}
           OVERLEAF_PROJECT_ID: ${{ secrets.OVERLEAF_PROJECT_ID }}
