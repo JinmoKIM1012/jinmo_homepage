@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid, Box, Text, Link, Image, Grid, GridItem, useColorModeValue, useDisclosure, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Box, Text, Link, Image, Grid, GridItem, useColorModeValue, useDisclosure, Modal, ModalOverlay, ModalContent, ModalCloseButton } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 
@@ -76,7 +76,7 @@ const Publications = () => (
           <PubEntry
             image="/publications/extend3d.png"
             title="Extend3D: Town-scale 3D Generation"
-            authors={<><Text as="span">Seungwoo Kim, <b>Jinmo Kim</b>, and Jaesik Park</Text></>}
+            authors={<><Text as="span">Seungwoo Yoon, <b>Jinmo Kim</b>, and Jaesik Park</Text></>}
             venue={<>Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026</>}
           />
         </Section>
