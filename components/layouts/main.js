@@ -12,7 +12,7 @@ import Footer from '../footer'
 
 const Main = ({ children, router }) => {
   return (
-    <Box as="main" pb={8}>
+    <Box as="main" minH="100vh" display="flex" flexDirection="column">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Jinmo's homepage" />
@@ -33,11 +33,13 @@ const Main = ({ children, router }) => {
 
       <NavBar path={router.asPath} />
 
-      <Container maxW="container.md" pt={14}>
+      <Container maxW="1200px" pt={14} flex="1">
         {/* <LazyVoxelDog /> */}
 
         {children}
+      </Container>
 
+      <Container maxW="1200px">
         <Footer />
       </Container>
     </Box>

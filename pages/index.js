@@ -19,7 +19,7 @@ import Image from 'next/image'
 
 const Home = () => (
   <Layout>
-    <Container>
+    <Container maxW="1200px">
       {/* <Box
         borderRadius="lg"
         mb={6}
@@ -129,6 +129,18 @@ const Home = () => (
 
       <Section delay={0.2}>
         <Heading as="h3" variant="section-title">
+          Research Interests
+        </Heading>
+        <EduSection year="3D Vision" centerLabel>
+          Feed-forward Image-to-3D, 3D Scene Understanding, Robot Vision for Clutter Scenes
+        </EduSection>
+        <EduSection year="Computer Graphics" centerLabel>
+          Neural Graphics (Novel View Synthesis, Surface Reconstruction)
+        </EduSection>
+      </Section>
+
+      <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
           Education
         </Heading>
         <EduSection year="Sep. 2023 - Present">
@@ -162,7 +174,7 @@ const Home = () => (
         </EduSection> 
       </Section>
 
-      <Section delay={0.3}>
+      <Section delay={0.4}>
         <Heading as="h3" variant="section-title">
           Skills
         </Heading>
@@ -172,7 +184,7 @@ const Home = () => (
         </Paragraph>
       </Section>
 
-      <Section delay={0.3}>
+      <Section delay={0.5}>
         <Heading as="h3" variant="section-title">
           On the web
         </Heading>

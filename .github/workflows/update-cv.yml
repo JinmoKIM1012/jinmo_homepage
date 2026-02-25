@@ -1,0 +1,46 @@
+name: Update CV from Overleaf
+
+on:
+  # Trigger manually from GitHub Actions UI
+  workflow_dispatch:
+  # Trigger via repository dispatch (can be called from Overleaf git hook or external script)
+  repository_dispatch:
+    types: [update-cv]
+
+jobs:
+  update-cv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout homepage repo
+        uses: actions/checkout@v4
+
+      - name: Clone Overleaf repo
+        run: |
+          git clone https://${{ secrets.OVERLEAF_GIT_TOKEN }}@git.overleaf.com/${{ secrets.OVERLEAF_PROJECT_ID }} overleaf-cv
+        env:
+          OVERLEAF_GIT_TOKEN: ${{ secrets.OVERLEAF_GIT_TOKEN }}
+          OVERLEAF_PROJECT_ID: ${{ secrets.OVERLEAF_PROJECT_ID }}
+
+      - name: Compile LaTeX to PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: overleaf-cv
+
+      - name: Copy compiled PDF
+        run: |
+          cp overleaf-cv/main.pdf public/Jinmo_Kim_CV.pdf
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet public/Jinmo_Kim_CV.pdf && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push updated CV
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/Jinmo_Kim_CV.pdf
+          git commit -m "Update CV from Overleaf"
+          git push
