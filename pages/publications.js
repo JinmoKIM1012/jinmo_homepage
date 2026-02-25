@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid, Box, Text } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Box, Text, Link } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 
@@ -6,6 +6,26 @@ const Publications = () => (
   <Layout title="Publications">
     <Container mt={8}>
       <Heading as="h3" fontSize={20} mb={4}>
+        International Conferences
+      </Heading>
+
+      <SimpleGrid columns={1} gap={6}>
+        <Section>
+          <Box w={"100%"} textAlign="left" mb={6}>
+            <Text mt={2} fontSize={'lg'}>
+              Extend3D: Town-scale 3D Generation
+            </Text>
+            <Text fontSize={'sm'}>
+              Seungwoo Kim, <b>Jinmo Kim</b>, and Jaesik Park
+            </Text>
+            <Text fontSize={'sm'} color="grey" fontStyle="italic">
+              Conference on Computer Vision and Pattern Recognition (CVPR), Jun. 2026
+            </Text>
+          </Box>
+        </Section>
+      </SimpleGrid>
+
+      <Heading as="h3" fontSize={20} mb={4} mt={8}>
         Domestic Conferences
       </Heading>
 
@@ -46,7 +66,7 @@ const Publications = () => (
               제 35회 영상처리 및 이해에 관한 워크샵 (IPIU), 2023
             </Text>
           </Box>
-        </Section> 
+        </Section>
       </SimpleGrid>
 
     <Box align="center" h="5em">

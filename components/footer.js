@@ -1,25 +1,25 @@
-import { Box, Link } from '@chakra-ui/react'
+import { Box, Link, useColorModeValue } from '@chakra-ui/react'
 
 const Footer = () => {
+  const color = useColorModeValue('gray.600', 'gray.400')
+  const linkColor = useColorModeValue('#7f523d', '#ff63c3')
+
   return (
     <Box
       as="footer"
-      position={{ base: 'relative', md: 'fixed' }}
-      bottom={{ base: 'auto', md: '0' }}
-      left="0"
       width="100%"
       py={4}
       textAlign="center"
-      opacity={0.4}
+      opacity={0.6}
       fontSize="sm"
+      color={color}
     >
       Built based on the{' '}
       <Link
         href="https://www.craftz.dog/"
         target="_blank"
         rel="noopener noreferrer"
-        color="#7f523d"
-        _dark={{ color: '#B5651D' }}
+        color={linkColor}
         transition="color 0.3s ease-in-out"
       >
         Takuya Matsuyama&apos;s website
