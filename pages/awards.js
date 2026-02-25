@@ -107,7 +107,7 @@ const Awards = () => (
             Fast 3D Shape Reconstruction of Multiple Objects from Single/Few Images for Robotic Environments
           </Text>
           <Text fontSize={'sm'}>
-            <em>Master's Student Research Fellowship Program</em> <br />
+            <em>Master&apos;s Student Research Fellowship Program</em> <br />
             Ministry of Education, Republic of Korea
           </Text>
         </FundSection>
